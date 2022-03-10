@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ConfigUrlService {
   
-  private url = <string> 'www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
+  private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka';
 
   constructor(public http: HttpClient) { }
 
@@ -17,10 +17,7 @@ export class ConfigUrlService {
     return this.http.get(this.url)
   }
  */
-  getData(){
+  getCocktailsByIngredientName(){
    return this.http.get<any>(this.url)
-    .subscribe(
-      data => console.log(data)
-    ); 
   } 
 }

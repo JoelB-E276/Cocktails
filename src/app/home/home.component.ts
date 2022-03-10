@@ -16,9 +16,11 @@ export class HomeComponent implements OnInit {
     }
 
   getCocktails() {
-    let data = this.urlService.getData();
-    console.log(data);
-    
-    return data;
+    this.urlService.getCocktailsByIngredientName()
+    .subscribe(
+      data => console.log(data)
+    );    
   }
+
+  
 } 
