@@ -9,7 +9,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ConfigUrlService {
   
-  private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka';
+  private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
+  private urlCocktailById = <string> 'www.thecocktaildb.com/api/json/v1/1/lookup.php?i=428';
 
   constructor(public http: HttpClient) { }
 
@@ -18,6 +19,17 @@ export class ConfigUrlService {
   }
  */
   getCocktailsByIngredientName(){
-   return this.http.get<any>(this.url)
-  } 
+    return this.http.get<any>(this.url)
+  }
+  
+  getCocktailById(){
+    return this.http.get<any>(this.urlCocktailById)
+  }
 }
+
+
+/* Par verre https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list'; 
+Par ingredient 100    www.thecocktaildb.com/api/json/v1/1/list.php?i=list
+Alcool ou non         www.thecocktaildb.com/api/json/v1/1/list.php?a=list
+Catégorie                                                          c=list
+par ingredient 100 avoir diff ? www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin*/
