@@ -4,3 +4,30 @@
     box-shadow: 4px 0px 16px 5px rgba(0,0,0,0.53);
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+.dropdown-menu li {
+    position: relative;
+  }
+  .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute !important;
+    left: 100%;
+    top: -7px;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+  }
+  .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+  }
+
+                                    /*###################################*/
+                                    /*########## MEDIA QUERIES ##########*/
+                                    /*###################################*/
+
+@media screen and (max-width: 767px){
+
+    .dropdown-menu > li > .dropdown-submenu {
+        position: static !important;
+    }
+}  

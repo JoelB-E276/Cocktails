@@ -27,7 +27,17 @@ export class HomeComponent implements OnInit {
       );    
   }
 
-  
+  getCocktailById() {
+    this.urlService.getCocktailById()
+      .subscribe(
+        (result) => {
+          this.cocktailId = result
+          console.log(this.cocktailId);
+          
+        }
+      )
+
+  }  
 
   
 }   
