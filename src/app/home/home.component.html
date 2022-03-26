@@ -2,35 +2,24 @@
   <button ngModel type="submit" name="ingredient" class="btn btn-dark">Ajouter</button>
 </form> 
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="RumType" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-    Rum Type
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a class="dropdown-item" value="rum">Rum</a></li>
-    <li><a class="dropdown-item" value="Light rum">Light rum</a></li>
-    <li><a class="dropdown-item" value="Dark rum">Dark rum</a></li>
-    <li><a class="dropdown-item" value="Spiced rum">Spiced rum</a></li>
-    <li><a class="dropdown-item" value="Añejo rum">Añejo rum</a></li>
-<!--     <li><hr class="dropdown-divider"></li>
- -->  
-  </ul>
-</div>
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="WiskeyType" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-    Whiskey Type
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a class="dropdown-item" value="Scotch">Scotch</a></li>
-    <li><a class="dropdown-item" value="Whiskey">Wiskey</a></li>
-    <li><a class="dropdown-item" value="Bourbon">Bourbon</a></li>
-    <li><a class="dropdown-item" value="Irish whiskey">Irish whiskey</a></li>
-    <li><a class="dropdown-item" value="Johnnie Walker">Johnnie Walker</a></li>
-<!--     <li><hr class="dropdown-divider"></li>
- -->  
-  </ul>
-</div>
+<form #form="ngForm" (submit)="getCocktails(form)">
+  <select class="form-select form-select-sm text-reset" aria-label=".form-select-sm example">
+    <option selected>Rum type</option>
+    <option value="rum">Rum</option>
+    <option value="Light rum">Light rum</option>
+    <option value="Dark rum">Dark rum</option>
+    <option value="Spiced rum">Spiced rum</option>
+    <option value="Añejo rum">Añejo rum</option>
+  </select>
+  <select class="form-select form-select-sm text-reset" aria-label=".form-select-sm example">
+    <option selected>Wiskey type</option>
+    <option value="Scotch">Scotch</option>
+    <option value="Whiskey">Wiskey</option>
+    <option value="Bourbon">Bourbon</option>
+    <option value="Irish whiskey">Irish whiskey</option>
+    <option value="Johnnie Walker">Johnnie Walker</option>
+  </select>
+</form>
 1{{ ingredientName | json }} <br>
 ---------------
 

@@ -12,7 +12,7 @@ export class ConfigUrlService {
   private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
 /*   private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/ + 'lookup.php?i=' + id';
  */
-  private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11012';
+  private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
 
   constructor(public http: HttpClient) { }
 
@@ -38,4 +38,4 @@ Catégorie                                                          c=list
 { "strCategory": "Other/Unknown" }, { "strCategory": "Cocoa" }, { "strCategory": "Shot" }, { "strCategory": "Coffee / Tea" },
  { "strCategory": "Homemade Liqueur" }, { "strCategory": "Punch / Party Drink" }, { "strCategory": "Beer" }, { "strCategory": "Soft Drink" } ] }
 --------------- 
-par ingredient 100 avoir diff ? www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin*/
+par ingredient 100 voir diff ? www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin*/
