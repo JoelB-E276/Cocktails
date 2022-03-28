@@ -1,9 +1,39 @@
-<form #list="ngForm" (submit)="getCocktails()">
+<!-- <form #list="ngForm" (submit)="getCocktails()">
   <button ngModel type="submit" name="ingredient" class="btn btn-dark">Ajouter</button>
-</form> 
+</form>  -->
+<!--  
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="RumType" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+    Rum Type
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <li><a class="dropdown-item" value="rum">Rum</a></li>
+    <li><a class="dropdown-item" value="Light rum">Light rum</a></li>
+    <li><a class="dropdown-item" value="Dark rum">Dark rum</a></li>
+    <li><a class="dropdown-item" value="Spiced rum">Spiced rum</a></li>
+    <li><a class="dropdown-item" value="Añejo rum">Añejo rum</a></li>
+   <li><hr class="dropdown-divider"></li>
+  
+  </ul>
+</div>--> 
 
-<form #form="ngForm" (submit)="getCocktails(form)">
-  <select class="form-select form-select-sm text-reset" aria-label=".form-select-sm example">
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="WiskeyType" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+    Whiskey Type
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <li><a class="dropdown-item" value="Scotch">Scotch</a></li>
+    <li><a class="dropdown-item" value="Whiskey">Wiskey</a></li>
+    <li><a class="dropdown-item" value="Bourbon">Bourbon</a></li>
+    <li><a class="dropdown-item" value="Irish whiskey">Irish whiskey</a></li>
+    <li><a class="dropdown-item" value="Johnnie Walker">Johnnie Walker</a></li>
+    <li><hr class="dropdown-divider"></li>
+ 
+  </ul>
+</div>-->  
+
+<form #Ingredientform="ngForm" (click)="getCocktails(Ingredientform.value)">
+  <select class="form-select form-select-sm bg-secondary" type="button" name="RumType" ngModel  aria-label=".form-select-sm RumType">
     <option selected>Rum type</option>
     <option value="rum">Rum</option>
     <option value="Light rum">Light rum</option>
@@ -11,7 +41,7 @@
     <option value="Spiced rum">Spiced rum</option>
     <option value="Añejo rum">Añejo rum</option>
   </select>
-  <select class="form-select form-select-sm text-reset" aria-label=".form-select-sm example">
+  <select class="form-select form-select-sm text-reset" ngModel name="WiskeyType" aria-label=".form-select-sm WiskeyType">
     <option selected>Wiskey type</option>
     <option value="Scotch">Scotch</option>
     <option value="Whiskey">Wiskey</option>
@@ -23,7 +53,7 @@
 1{{ ingredientName | json }} <br>
 ---------------
 
-<div *ngFor="let data of ingredientName.drinks">
+<!-- <div *ngFor="let data of ingredientName.drinks">
   <div class="row">
     <div class="col-sm-3">
       <div class="card bg-dark my-3">
@@ -38,7 +68,7 @@
 </div>
 
 
-<form #list="ngForm" (submit)="getCocktailById()">
+<form #list2="ngForm" (submit)="getCocktailById()">
   <button ngModel type="submit" name="ById" class="btn btn-dark">By Id</button>
 </form> 
 1{{ ingredientName | json }} <br>
@@ -56,7 +86,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!--
 <div class="container">

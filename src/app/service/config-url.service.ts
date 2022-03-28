@@ -9,9 +9,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ConfigUrlService {
   
-  private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
-/*   private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/ + 'lookup.php?i=' + id';
- */
+ /* private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
+  */ 
+  private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/';
+   
+  private filterByIngredient = <string> 'filter.php?i=';
+  private ingredient = <any>[];
+
+
   private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
 
   constructor(public http: HttpClient) { }
@@ -20,8 +25,8 @@ export class ConfigUrlService {
     return this.http.get(this.url)
   }
  */
-  getCocktailsByIngredientName() {
-    return this.http.get<any>(this.url)
+  getCocktailsByIngredientName(ingredient: any) {
+    return this.http.get<any>(this.url + this.filterByIngredient + ingredient)
   }
   
   getCocktailById() {

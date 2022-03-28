@@ -21,7 +21,7 @@
     display: block;
   }
   .form-select{
-    color: crimson;
+    color: crimson !important;
   }
 
                                     /*###################################*/
