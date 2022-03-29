@@ -32,41 +32,45 @@
   </ul>
 </div>-->  
 
-<form #Ingredientform="ngForm" (click)="getCocktails(Ingredientform.value)">
-  <select class="form-select form-select-sm bg-secondary" type="button" name="RumType" ngModel  aria-label=".form-select-sm RumType">
+<form #RumTypeform="ngForm" (click)="getCocktails(RumTypeform.value)">
+  <select class="form-select form-select-sm bg-secondary" type="button" ngModel name="RumType" aria-label=".form-select-sm">
     <option selected>Rum type</option>
-    <option value="rum">Rum</option>
-    <option value="Light rum">Light rum</option>
-    <option value="Dark rum">Dark rum</option>
-    <option value="Spiced rum">Spiced rum</option>
     <option value="Añejo rum">Añejo rum</option>
+    <option value="Dark rum">Dark rum</option>
+    <option value="Light rum">Light rum</option>
+    <option value="rum">Rum</option>
+    <option value="Spiced rum">Spiced rum</option>
   </select>
-  <select class="form-select form-select-sm text-reset" ngModel name="WiskeyType" aria-label=".form-select-sm WiskeyType">
+</form>
+<form #WiskeyTypeform="ngForm" (click)="getCocktails(WiskeyTypeform.value)">
+  <select class="form-select form-select-sm text-reset" ngModel name="WiskeyType" aria-label=".form-select-sm">
     <option selected>Wiskey type</option>
-    <option value="Scotch">Scotch</option>
-    <option value="Whiskey">Wiskey</option>
+    <option value="Blended whiskey">Blended whiskey</option>
     <option value="Bourbon">Bourbon</option>
     <option value="Irish whiskey">Irish whiskey</option>
+    <option value="Jack Daniels">Jack Daniels</option>
     <option value="Johnnie Walker">Johnnie Walker</option>
+    <option value="Scotch">Scotch</option>
+    <option value="Whiskey">Wiskey</option>
   </select>
 </form>
 1{{ ingredientName | json }} <br>
 ---------------
 
-<!-- <div *ngFor="let data of ingredientName.drinks">
+<div *ngFor="let data of ingredientName.drinks">
   <div class="row">
-    <div class="col-sm-3">
-      <div class="card bg-dark my-3">
-        <div class="card-body">
-          <h5 class="card-title text-light">{{ data.strIngredient }}</h5>
-          <p class="card-text text-secondary fw-bold">{{ data.strDescription }}</p>
-          <p class="card-text text-light">{{ data.strDrink }}</p>
+    <div class="col-sm-3 mb-3">
+      <div class="card" style="width: 15rem;">
+<!--         <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
+ -->        <div class="card-body text-center">
+          <p class="card-text">{{ data.strDrink }}</p>
         </div>
       </div>
-    </div>
+    </div> 
   </div>
 </div>
-
+<!-- 
+{ "drinks": [ { "strDrink": "Allegheny", "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/uwvyts1483387934.jpg", "idDrink": "11021" },
 
 <form #list2="ngForm" (submit)="getCocktailById()">
   <button ngModel type="submit" name="ById" class="btn btn-dark">By Id</button>

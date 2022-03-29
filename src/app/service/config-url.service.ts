@@ -14,8 +14,6 @@ export class ConfigUrlService {
   private url = <string> 'https://www.thecocktaildb.com/api/json/v1/1/';
    
   private filterByIngredient = <string> 'filter.php?i=';
-  private ingredient = <any>[];
-
 
   private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
 

@@ -21,11 +21,8 @@ export class HomeComponent implements OnInit {
 
 
   getCocktails(ingredient: any) {
-    let strIngredient = JSON.stringify(ingredient)
-    console.log("mon Ingredient:"+ ingredient);
-    console.log("mon STR Ingredient:"+ strIngredient);
-
-    this.urlService.getCocktailsByIngredientName(ingredient)     
+    let selectedIngredient = Object.values(ingredient);
+    this.urlService.getCocktailsByIngredientName(selectedIngredient)     
       .subscribe(
           (result) => { 
             this.ingredientName = result  
