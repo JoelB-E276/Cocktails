@@ -1,72 +1,190 @@
-<!-- <form #list="ngForm" (submit)="getCocktails()">
-  <button ngModel type="submit" name="ingredient" class="btn btn-dark">Ajouter</button>
-</form>  -->
-<!--  
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="RumType" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-    Rum Type
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a class="dropdown-item" value="rum">Rum</a></li>
-    <li><a class="dropdown-item" value="Light rum">Light rum</a></li>
-    <li><a class="dropdown-item" value="Dark rum">Dark rum</a></li>
-    <li><a class="dropdown-item" value="Spiced rum">Spiced rum</a></li>
-    <li><a class="dropdown-item" value="Añejo rum">Añejo rum</a></li>
-   <li><hr class="dropdown-divider"></li>
-  
-  </ul>
-</div>--> 
-
-<!-- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="WiskeyType" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-    Whiskey Type
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a class="dropdown-item" value="Scotch">Scotch</a></li>
-    <li><a class="dropdown-item" value="Whiskey">Wiskey</a></li>
-    <li><a class="dropdown-item" value="Bourbon">Bourbon</a></li>
-    <li><a class="dropdown-item" value="Irish whiskey">Irish whiskey</a></li>
-    <li><a class="dropdown-item" value="Johnnie Walker">Johnnie Walker</a></li>
-    <li><hr class="dropdown-divider"></li>
- 
-  </ul>
-</div>-->  
-
-<form #RumTypeform="ngForm" (click)="getCocktails(RumTypeform.value)">
-  <select class="form-select form-select-sm bg-secondary" type="button" ngModel name="RumType" aria-label=".form-select-sm">
-    <option selected>Rum type</option>
-    <option value="Añejo rum">Añejo rum</option>
-    <option value="Dark rum">Dark rum</option>
-    <option value="Light rum">Light rum</option>
-    <option value="rum">Rum</option>
-    <option value="Spiced rum">Spiced rum</option>
-  </select>
-</form>
-<form #WiskeyTypeform="ngForm" (click)="getCocktails(WiskeyTypeform.value)">
-  <select class="form-select form-select-sm text-reset" ngModel name="WiskeyType" aria-label=".form-select-sm">
-    <option selected>Wiskey type</option>
-    <option value="Blended whiskey">Blended whiskey</option>
-    <option value="Bourbon">Bourbon</option>
-    <option value="Irish whiskey">Irish whiskey</option>
-    <option value="Jack Daniels">Jack Daniels</option>
-    <option value="Johnnie Walker">Johnnie Walker</option>
-    <option value="Scotch">Scotch</option>
-    <option value="Whiskey">Wiskey</option>
-  </select>
-</form>
-1{{ ingredientName | json }} <br>
----------------
-
-<div *ngFor="let data of ingredientName.drinks">
+<div class="container">
   <div class="row">
-    <div class="col-sm-3 mb-3">
-      <div class="card" style="width: 15rem;">
-<!--         <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
- -->        <div class="card-body text-center">
-          <p class="card-text">{{ data.strDrink }}</p>
+    <div class="d-flex justify-content-evenly">
+      <form #RumTypeform="ngForm" (click)="getCocktails(RumTypeform.value)" class="col-2">
+        <select class="form-select form-select-sm bg-secondary" type="button" ngModel name="RumType" aria-label=".form-select-sm">
+          <option selected>Rum type</option>
+          <option value="151 proof rum">151 proof rum</option>
+          <option value="Añejo rum">Añejo rum</option>
+          <option value="Dark rum">Dark rum</option>
+          <option value="Light rum">Light rum</option>
+          <option value="rum">Rum</option>
+          <option value="Spiced rum">Spiced rum</option>
+          <option value="White rum">White rum</option>
+        </select>
+      </form>
+      <form #WiskeyTypeform="ngForm" (click)="getCocktails(WiskeyTypeform.value)"class="col-2">
+        <select class="form-select form-select-sm text-reset" ngModel name="WiskeyType" aria-label=".form-select-sm">
+          <option selected>Wiskey type</option>
+          <option value="Blended whiskey">Blended whiskey</option>
+          <option value="Bourbon">Bourbon</option>
+          <option value="Irish whiskey">Irish whiskey</option>
+          <option value="Jack Daniels">Jack Daniels</option>
+          <option value="Johnnie Walker">Johnnie Walker</option>
+          <option value="Scotch">Scotch</option>
+          <option value="Whiskey">Wiskey</option>
+        </select>
+      </form>
+      <form #Alcoholform="ngForm" (click)="getCocktails(Alcoholform.value)"class="col-2">
+        <select class="form-select form-select-sm text-reset" ngModel name="Alcohol" aria-label=".form-select-sm">
+          <option selected>Aperitif alcohol</option>
+          <option value="Gin">Gin</option>
+          <option value="Malibu rum">Malibu rum</option>
+          <option value="Ricard">Ricard</option>
+          <option value="Tequila">Tequila</option> 
+          <option value="Passoa">Passoa</option>
+          <option value="Vodka">Vodka</option>
+          <option value="Lemon vodka">Lemon vodka</option>
+          <option value="Absolut Citron">Absolut Citron</option>
+          <option value="Peach Vodka">Peach Vodka</option>
+        </select>
+      </form>
+      <form #OtherAlcoholform="ngForm" (click)="getCocktails(OtherAlcoholform.value)"class="col-2">
+        <select class="form-select form-select-sm text-reset" ngModel name="OtherAlcohol" aria-label=".form-select-sm">
+          <option selected>Other alcohol</option>
+          <option value="Absinthe">Absinthe</option>
+          <option value="Amaretto">Amaretto</option>
+          <option value="Applejack">Applejack</option>        
+          <option value="Baileys Irish cream">Baileys Irish cream</option>
+          <option value="Cointreau">Cointreau</option>
+          <option value="Triple sec">Triple sec</option>
+          <option value="Beer">Beer</option>
+          <option value="Lager">Lager(Beer)</option>
+          <option value="Ale">Ale(Beer)</option>
+        </select>
+      </form>
+      <form #Wineform="ngForm" (click)="getCocktails(Wineform.value)"class="col-2">
+        <select class="form-select form-select-sm text-reset" ngModel name="WineForm" aria-label=".form-select-sm">
+          <option selected>Wine based</option>
+          <option value="Apple brandy">Apple brandy</option>
+          <option value="Apricot brandy">Apricot brandy</option>
+          <option value="Blackberry brandy">Blackberry brandy</option>
+          <option value="Brandy">Brandy</option>
+          <option value="Champagne">Champagne</option>
+          <option value="Coffee brandy">Coffee brandy</option>
+          <option value="Cognac">Cognac</option>
+          <option value="Dry Vermouth">Dry Vermouth</option>
+          <option value="Dubonnet Rouge">Dubonnet Rouge</option>
+          <option value="Lillet">Lillet</option>
+          <option value="Pisco">Pisco</option>
+          <option value="Prosecco">Prosecco</option>
+          <option value="Sweet Vermouth">Sweet Vermouth</option>
+          <option value="Wine">Wine</option>
+          <option value="Red wine">Red wine</option>
+          <option value="White wine">White wine</option>
+        </select>
+      </form>
+      <form #Sodaform="ngForm" (click)="getCocktails(Sodaform.value)"class="col-2">
+        <select class="form-select form-select-sm text-reset" ngModel name="SodaForm" aria-label=".form-select-sm">
+          <option selected>Soda</option>
+          <option value="7-Up">7 up</option>
+          <option value="Coca-cola">Coca-cola</option>
+          <option value="Carbonated Water">Carbonated Water</option>
+          <option value="Lemonade">Lemonade</option>
+          <option value="Sprite">Sprite</option>
+          <option value="Soda water">Soda water</option>
+          <option value="Tonic water">Tonic water</option>
+        </select>
+      </form>
+      <form #Juiceform="ngForm" (click)="getCocktails(Juiceform.value)">
+        <select class="form-select form-select-sm text-reset" ngModel name="Juice" aria-label=".form-select-sm">
+          <option selected>Juice</option>
+          <option value="Apple juice">Apple juice</option>
+          <option value="Cranberry juice">Cranberry juice</option>
+          <option value="Lemon juice">Lemon juice</option>
+          <option value="Grape juice">Grape juice</option>
+          <option value="Grapefruit juice">Grapefruit juice</option>
+          <option value="Lime juice">Lime juice</option>
+          <option value="Orange juice">Orange juice</option>
+          <option value="Passion fruit juice">Passion fruit juice</option>
+          <option value="Pineapple juice">Pineapple juice</option>
+          <option value="Peach nectar">Peach nectar</option>
+          <option value="Tomato juice">Tomato juice</option>
+        </select>
+      </form>
+      <form #Fruitform="ngForm" (click)="getCocktails(Fruitform.value)">
+        <select class="form-select form-select-sm text-reset" ngModel name="Fruitform" aria-label=".form-select-sm">
+          <option selected>Fruit</option>
+          <option value="Berries">Berries</option>
+          <option value="Cranberries">Cranberries</option>
+          <option value="Grapes">Grapes</option>
+          <option value="Kiwi">Kiwi</option>
+          <option value="Lemon">Lemon</option>
+          <option value="Lemon peel">Lemon peel ????</option>
+          <option value="Lime">Lime?????</option>
+          <option value="Mango">Mango</option>
+          <option value="Olive">Olive</option>
+          <option value="Orange">Orange</option>      
+          <option value="Orange peel">Orange peel</option>
+          <option value="Pineapple">Pineapple</option>       
+          <option value="Sherry">Sherry</option>
+          <option value="Strawberries">Strawberries (Berry ??)</option>
+         </select>
+      </form>
+      <form #Sugarform="ngForm" (click)="getCocktails(Sugarform.value)">
+        <select class="form-select form-select-sm text-reset" ngModel name="Sugar" aria-label=".form-select-sm">
+          <option selected>Sugar</option>          
+          <option value="Sugar syrup">Sugar syrup</option>
+          <option value="Chocolate syrup">Chocolate syrup</option>
+          <option value="Sugar">Sugar</option>
+          <option value="Brown sugar">Brown sugar</option>
+          <option value="Demerara sugar">Demerara sugar</option>
+          <option value="Powdered sugar">Powdered sugar</option>
+        </select>
+      </form>
+     <form #Coffeeform="ngForm" (click)="getCocktails(Coffeeform.value)">
+        <select class="form-select form-select-sm text-reset" ngModel name="Coffee" aria-label=".form-select-sm">
+          <option selected>Coffee/Tea</option>
+          <option value="Coffee">Coffee</option>
+          <option value="Espresso">Espresso</option>
+          <option value="Milk">Milk</option>
+          <option value="Tea">Tea</option>
+        </select>
+      </form>
+      <form #Spicedform="ngForm" (click)="getCocktails(Spicedform.value)">
+        <select class="form-select form-select-sm text-reset" ngModel name="SpicedForm" aria-label=".form-select-sm">
+          <option selected>Spiced</option>         
+          <option value="Chocolate">Chocolate</option>
+          <option value="Cinnamon">Cinnamon</option>
+          <option value="Cocoa powder">Cocoa powder</option>
+          <option value="Ginger">Ginger</option>
+          <option value="Mint">Mint</option>
+          <option value="Nutmeg">Nutmeg</option>
+          <option value="Salt">Salt</option>
+          <option value="Tabasco sauce">Tabasco sauce</option>
+        </select>
+      </form>
+<!--        <form #form="ngForm" (click)="getCocktails(form.value)">
+        <select class="form-select form-select-sm text-reset" ngModel name="" aria-label=".form-select-sm">
+          <option selected></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+        </select>
+      </form> -->
+    </div>
+  </div>
+</div>
+
+<!-- 1{{ ingredientName | json }} <br>
+ -->---------------
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let data of ingredientName.drinks">
+      <div class="col-sm-3 mb-3">
+        <div class="card text-center" style="width: 15rem;">
+  <!--         <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
+  -->        <div class="card-body">
+            <p class="card-text btn neons"><a href="" class="stretched-link text-decoration-none">{{ data.strDrink }}</a></p>
+          </div>
         </div>
-      </div>
-    </div> 
+      </div> 
+    </div>
   </div>
 </div>
 <!-- 
@@ -119,104 +237,47 @@
   ]
 }
 }
-1{ "drinks": [ { "strIngredient1": "Light rum" }, 
-{ "strIngredient1": "Applejack" }, 
-{ "strIngredient1": "Gin" }, 
-{ "strIngredient1": "Dark rum" }, 
-{ "strIngredient1": "Sweet Vermouth" }, 
 { "strIngredient1": "Strawberry schnapps" }, 
-{ "strIngredient1": "Scotch" }, 
-{ "strIngredient1": "Apricot brandy" }, 
-{ "strIngredient1": "Triple sec" }, 
 { "strIngredient1": "Southern Comfort" }, 
 { "strIngredient1": "Orange bitters" }, 
-{ "strIngredient1": "Brandy" }, 
-{ "strIngredient1": "Lemon vodka" }, 
-{ "strIngredient1": "Blended whiskey" }, 
-{ "strIngredient1": "Dry Vermouth" }, 
-{ "strIngredient1": "Amaretto" }, 
-{ "strIngredient1": "Tea" }, 
-{ "strIngredient1": "Champagne" }, 
-{ "strIngredient1": "Coffee liqueur" }, 
-{ "strIngredient1": "Bourbon" }, 
-{ "strIngredient1": "Tequila" }, 
-{ "strIngredient1": "Vodka" }, 
-{ "strIngredient1": "Añejo rum" }, 
 { "strIngredient1": "Bitters" }, 
-{ "strIngredient1": "Sugar" }, 
 { "strIngredient1": "Kahlua" }, 
-{ "strIngredient1": "demerara Sugar" }, 
-{ "strIngredient1": "Dubonnet Rouge" }, 
 { "strIngredient1": "Watermelon" },
-{ "strIngredient1": "Lime juice" }, 
-{ "strIngredient1": "Irish whiskey" },
-{ "strIngredient1": "Apple brandy" }, 
 { "strIngredient1": "Carbonated water" }, 
-{ "strIngredient1": "Cherry brandy" },
 { "strIngredient1": "Creme de Cacao" }, 
 { "strIngredient1": "Grenadine" }, 
 { "strIngredient1": "Port" }, 
-{ "strIngredient1": "Coffee brandy" },
-{ "strIngredient1": "Red wine" }, 
-{ "strIngredient1": "Rum" }, 
-{ "strIngredient1": "Grapefruit juice" }, 
-{ "strIngredient1": "Ricard" }, 
-{ "strIngredient1": "Sherry" }, 
-{ "strIngredient1": "Cognac" }, 
 { "strIngredient1": "Sloe gin" }, 
-{ "strIngredient1": "Apple juice" },
-{ "strIngredient1": "Pineapple juice" }, 
-{ "strIngredient1": "Lemon juice" }, 
-{ "strIngredient1": "Sugar syrup" }, 
-{ "strIngredient1": "Milk" }, 
-{ "strIngredient1": "Strawberries" }, 
-{ "strIngredient1": "Chocolate syrup" }, 
 { "strIngredient1": "Yoghurt" }, 
-{ "strIngredient1": "Mango" }, 
-{ "strIngredient1": "Ginger" }, 
-{ "strIngredient1": "Lime" }, 
 "strIngredient1": "Cantaloupe" }, 
-{ "strIngredient1": "Berries" }, 
-{ "strIngredient1": "Grapes" }, 
-{ "strIngredient1": "Kiwi" }, 
-{ "strIngredient1": "Tomato juice" }, 
-{ "strIngredient1": "Cocoa powder" },
-{ "strIngredient1": "Chocolate" }, 
 { "strIngredient1": "Heavy cream" },
 { "strIngredient1": "Galliano" }, 
-{ "strIngredient1": "Peach Vodka" },
- { "strIngredient1": "Ouzo" }, 
- { "strIngredient1": "Coffee" }, 
-{ "strIngredient1": "Spiced rum" }, 
+{ "strIngredient1": "Ouzo" }, 
 { "strIngredient1": "Water" }, 
-{ "strIngredient1": "Espresso" }, 
 { "strIngredient1": "Angelica root" }, 
-{ "strIngredient1": "Orange" }, 
-{ "strIngredient1": "Cranberries" }, 
-{ "strIngredient1": "Johnnie Walker" }, 
 { "strIngredient1": "Apple cider" },
 { "strIngredient1": "Everclear" }, 
-{ "strIngredient1": "Cranberry juice" }, 
-{ "strIngredient1": "Egg yolk" }, 
-{ "strIngredient1": "Egg" },
-{ "strIngredient1": "Grape juice" }, 
-{ "strIngredient1": "Peach nectar" }, 
-{ "strIngredient1": "Lemon" }, 
 { "strIngredient1": "Firewater" }, 
-{ "strIngredient1": "Lemonade" }, 
-{ "strIngredient1": "Lager" }, 
-{ "strIngredient1": "Whiskey" }, 
-{ "strIngredient1": "Absolut Citron" },
-{ "strIngredient1": "Pisco" }, 
 { "strIngredient1": "Irish cream" }, 
-{ "strIngredient1": "Ale" }, 
 { "strIngredient1": "Chocolate liqueur" }, 
  "strIngredient1": "Midori melon liqueur" },  
 { "strIngredient1": "Sambuca" }, 
 { "strIngredient1": "Cider" }, 
-{ "strIngredient1": "Sprite" }, 
-{ "strIngredient1": "7-Up" }, 
-{ "strIngredient1": "Blackberry brandy" }, 
 { "strIngredient1": "Peppermint schnapps" }, 
-{ "strIngredient1": "Creme de Cassis" } ] }  
+{ "strIngredient1": "Creme de Cassis" } ] }
+{ "strIngredient1": "Lime liqueur" 309 },
+{ "strIngredient1": "Maraschino cherry"322 }, 
+{ "strIngredient1": "Maraschiro liqueur"323 }, 
+{ "strIngredient1": "Midori melon liqueur"313 }, 
+{ "strIngredient1": "Orange bitters" 350}, 
+{ "strIngredient1": "Peach Schnapps" 379}, 
+{ "strIngredient1": "Water"513 }, 
+{ "strIngredient1": "Whipped Cream "515 }, 
+{ "strIngredient1": "Yoghurt" 533 }, 
+{ "strIngredient1": "Angostura bitters" 20 }, 
+{ "strIngredient1": "Benedictine" 53 }, 
+{ "strIngredient1": "Bitters"  56}, 
+{ "strIngredient1": "Blue Curacao" 67 }, 
+{ "strIngredient1": "Campari" 83 }, 
+
 -->

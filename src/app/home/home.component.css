@@ -4,7 +4,7 @@
     box-shadow: 4px 0px 16px 5px rgba(0,0,0,0.53);
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.dropdown-menu li {
+/* .dropdown-menu li {
     position: relative;
   }
   .dropdown-menu .dropdown-submenu {
@@ -19,10 +19,41 @@
   }
   .dropdown-menu > li:hover > .dropdown-submenu {
     display: block;
-  }
+  } */
   .form-select{
     color: crimson !important;
   }
+  :root {
+    --clr-neon: hsl(317 100% 54%) !important;
+    --clr-bg: hsl(323 21% 16%)
+}
+
+.neons {
+    font-size: 1rem;
+    height: 60px;
+    width: 150px;
+    cursor: pointer;
+    font-family: "Balsamiq Sans", cursive;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 3px solid;
+    background-color: transparent;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    transition: all 0.5s
+}
+
+.neons:hover {
+    background-color: var(--clr-neon);
+    color: #fff
+}
+
+/* .separator {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, rgb(144, 39, 158), transparent);  
+} */
+
 
                                     /*###################################*/
                                     /*########## MEDIA QUERIES ##########*/
