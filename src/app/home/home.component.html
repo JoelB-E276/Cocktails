@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-evenly">
-      <form #RumTypeform="ngForm" (click)="getCocktails(RumTypeform.value)" class="col-2">
+<div class="container content bg-light">
+  <div class="row justify-content-center">
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">
+      <form #RumTypeform="ngForm" (click)="getCocktails(RumTypeform.value)">
         <select class="form-select form-select-sm bg-secondary" type="button" ngModel name="RumType" aria-label=".form-select-sm">
           <option selected>Rum type</option>
           <option value="151 proof rum">151 proof rum</option>
@@ -13,7 +13,9 @@
           <option value="White rum">White rum</option>
         </select>
       </form>
-      <form #WiskeyTypeform="ngForm" (click)="getCocktails(WiskeyTypeform.value)"class="col-2">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">  
+      <form #WiskeyTypeform="ngForm" (click)="getCocktails(WiskeyTypeform.value)" >
         <select class="form-select form-select-sm text-reset" ngModel name="WiskeyType" aria-label=".form-select-sm">
           <option selected>Wiskey type</option>
           <option value="Blended whiskey">Blended whiskey</option>
@@ -25,7 +27,9 @@
           <option value="Whiskey">Wiskey</option>
         </select>
       </form>
-      <form #Alcoholform="ngForm" (click)="getCocktails(Alcoholform.value)"class="col-2">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">  
+      <form #Alcoholform="ngForm" (click)="getCocktails(Alcoholform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="Alcohol" aria-label=".form-select-sm">
           <option selected>Aperitif alcohol</option>
           <option value="Gin">Gin</option>
@@ -39,7 +43,9 @@
           <option value="Peach Vodka">Peach Vodka</option>
         </select>
       </form>
-      <form #OtherAlcoholform="ngForm" (click)="getCocktails(OtherAlcoholform.value)"class="col-2">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">  
+      <form #OtherAlcoholform="ngForm" (click)="getCocktails(OtherAlcoholform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="OtherAlcohol" aria-label=".form-select-sm">
           <option selected>Other alcohol</option>
           <option value="Absinthe">Absinthe</option>
@@ -53,7 +59,9 @@
           <option value="Ale">Ale(Beer)</option>
         </select>
       </form>
-      <form #Wineform="ngForm" (click)="getCocktails(Wineform.value)"class="col-2">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">
+      <form #Wineform="ngForm" (click)="getCocktails(Wineform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="WineForm" aria-label=".form-select-sm">
           <option selected>Wine based</option>
           <option value="Apple brandy">Apple brandy</option>
@@ -74,7 +82,9 @@
           <option value="White wine">White wine</option>
         </select>
       </form>
-      <form #Sodaform="ngForm" (click)="getCocktails(Sodaform.value)"class="col-2">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">  
+      <form #Sodaform="ngForm" (click)="getCocktails(Sodaform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="SodaForm" aria-label=".form-select-sm">
           <option selected>Soda</option>
           <option value="7-Up">7 up</option>
@@ -86,6 +96,8 @@
           <option value="Tonic water">Tonic water</option>
         </select>
       </form>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">
       <form #Juiceform="ngForm" (click)="getCocktails(Juiceform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="Juice" aria-label=".form-select-sm">
           <option selected>Juice</option>
@@ -102,6 +114,8 @@
           <option value="Tomato juice">Tomato juice</option>
         </select>
       </form>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2"> 
       <form #Fruitform="ngForm" (click)="getCocktails(Fruitform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="Fruitform" aria-label=".form-select-sm">
           <option selected>Fruit</option>
@@ -121,6 +135,8 @@
           <option value="Strawberries">Strawberries (Berry ??)</option>
          </select>
       </form>
+    </div>   
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2 my-2">
       <form #Sugarform="ngForm" (click)="getCocktails(Sugarform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="Sugar" aria-label=".form-select-sm">
           <option selected>Sugar</option>          
@@ -132,6 +148,8 @@
           <option value="Powdered sugar">Powdered sugar</option>
         </select>
       </form>
+    </div>
+    <div class="col-6 col-md-3 col-xl-2 my-2">    
      <form #Coffeeform="ngForm" (click)="getCocktails(Coffeeform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="Coffee" aria-label=".form-select-sm">
           <option selected>Coffee/Tea</option>
@@ -141,6 +159,8 @@
           <option value="Tea">Tea</option>
         </select>
       </form>
+    </div>
+    <div class="col-6 col-md-3 col-xl-2 my-2">
       <form #Spicedform="ngForm" (click)="getCocktails(Spicedform.value)">
         <select class="form-select form-select-sm text-reset" ngModel name="SpicedForm" aria-label=".form-select-sm">
           <option selected>Spiced</option>         
@@ -154,39 +174,40 @@
           <option value="Tabasco sauce">Tabasco sauce</option>
         </select>
       </form>
-<!--        <form #form="ngForm" (click)="getCocktails(form.value)">
-        <select class="form-select form-select-sm text-reset" ngModel name="" aria-label=".form-select-sm">
-          <option selected></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
-      </form> -->
     </div>
   </div>
 </div>
 
+
 <!-- 1{{ ingredientName | json }} <br>
  -->---------------
-<div class="container-fluid">
-  <div class="row">
-    <div *ngFor="let data of ingredientName.drinks">
-      <div class="col-sm-3 mb-3">
+
+
+ <div class="container-fluid bg-success">
+   <div class="row">
+     <div *ngFor="let data of ingredientName.drinks" class="col-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-around">
         <div class="card text-center" style="width: 15rem;">
-  <!--         <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
-  -->        <div class="card-body">
+<!--           <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
+ -->         <div class="card-body">
+            <p class="card-text"><a href="" class="btn neons stretched-link text-decoration-none">{{ data.strDrink }}</a></p>
+          </div>
+        </div>
+      </div>
+    <!-- <div class="container-fluid">
+  <div class="row justify-content-center">
+    <div *ngFor="let data of ingredientName.drinks" class="col-5 col-md-6 mb-3">
+      <div class="card text-center" style="width: 15rem;">
+          <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
+         <div class="card-body">
             <p class="card-text btn neons"><a href="" class="stretched-link text-decoration-none">{{ data.strDrink }}</a></p>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
-</div>
+   -->
+  
+    
 <!-- 
 { "drinks": [ { "strDrink": "Allegheny", "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/uwvyts1483387934.jpg", "idDrink": "11021" },
 
