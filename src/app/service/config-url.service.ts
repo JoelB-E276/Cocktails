@@ -15,7 +15,7 @@ export class ConfigUrlService {
    
   private filterByIngredient = <string> 'filter.php?i=';
 
-  private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
+  private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
   constructor(public http: HttpClient) { }
 
@@ -27,8 +27,8 @@ export class ConfigUrlService {
     return this.http.get<any>(this.url + this.filterByIngredient + ingredient)
   }
   
-  getCocktailById() {
-    return this.http.get<any>(this.urlCocktailById)
+  getCocktailById(cocktailId: string) {
+    return this.http.get<any>(this.urlCocktailById + cocktailId)
   }
 }
 

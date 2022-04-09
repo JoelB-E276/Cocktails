@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
+import { CocktailRecipeComponent } from './cocktail-recipe/cocktail-recipe.component';
 
 
 
@@ -12,7 +13,8 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CocktailRecipeComponent
   ],
   imports: [
     BrowserModule,

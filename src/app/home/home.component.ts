@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ConfigUrlService } from '../service/config-url.service';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs';
-import { NgForm, NgModel } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +12,20 @@ import { NgForm, NgModel } from '@angular/forms';
 export class HomeComponent implements OnInit {
   @Input() Ingredientform: any
 
-  constructor(public urlService: ConfigUrlService) { }
+  constructor(public urlService: ConfigUrlService, private route: ActivatedRoute) { }
 
   ingredientName = <any>[];
   cocktailId = <any>[];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.paramMap.pipe(
+      switchMap(params => {
+        this.cocktailId = String(params.get('idDink'));
+        console.log(this.cocktailId);
+        return this.urlService.getCocktailById(this.cocktailId);
+      })
+    );    
+  }
 
 
   getCocktails(ingredient: any) {
@@ -28,11 +36,11 @@ export class HomeComponent implements OnInit {
             this.ingredientName = result  
             console.log(this.ingredientName);                      
           }
-      );    
+      );
   }
 
-  getCocktailById() {
-    this.urlService.getCocktailById()
+  getDrinkById(cocktailId: string) {
+    this.urlService.getCocktailById(this.cocktailId)
       .subscribe(
         (result) => {
           this.cocktailId = result
