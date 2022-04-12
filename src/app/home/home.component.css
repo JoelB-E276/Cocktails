@@ -1,8 +1,11 @@
-.select_ingredient{
+.select_ingredient {
 	flex: 1;
   background-color: #000000;  
 }
-.form-select{
+.hidden {
+  display: none;
+}
+.form-select {
   background-color: #000000;  
   border-radius: 0%;
   border-color: #830c65; 
@@ -13,14 +16,25 @@
   box-shadow: 0 0 0.2em 0 #ff14bd, 0 0 0.2em 0 #ff14bd;
   color: #ff14bd;
 }
+.form-check-inline {
+  font-family: "Balsamiq Sans", cursive;
+  color: #ff14bd;
+  transition: all 1s;
 
-.card{
+}
+.form-check-input:checked {
+  background-color: #ff14bd;
+  border-color: #ff4bcc;
+  box-shadow: 0 0 0.2em 0 #ff14bd, 0 0 0.2em 0 #ff14bd;
+}
+
+.card {
   background-color: #22061b;  
   border-color: #ff14bd;
   box-shadow: 0 0 0.2em 0 #ff14bd, 0 0 0.2em 0 #ff14bd;
-  transition: all 0.5s;
+  transition: 2s ease-in-out .5s;
 }
-.card:hover{
+.card:hover {
   background-color: #22061b;  
   border-color: #ff14bd;
   -webkit-box-shadow: 0px 0px 17px 1px #ff14bd; 
@@ -58,7 +72,7 @@
 
 @media screen and (max-width: 767px){
 
-    .dropdown-menu > li > .dropdown-submenu {
+    /* .dropdown-menu > li > .dropdown-submenu {
         position: static !important;
-    }
+    } */
 }  

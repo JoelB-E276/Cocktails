@@ -4,6 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
+declare var showSelectMenu: any;
+declare var hideSelectMenu: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,9 +21,11 @@ export class HomeComponent implements OnInit {
   cocktailId = <any>[];
 
   ngOnInit(): void {
+    new showSelectMenu();
+    new hideSelectMenu();
     this.route.paramMap.pipe(
       switchMap(params => {
-        this.cocktailId = String(params.get('idDink'));
+        this.cocktailId = String(params.get('idDrink'));
         console.log(this.cocktailId);
         return this.urlService.getCocktailById(this.cocktailId);
       })
