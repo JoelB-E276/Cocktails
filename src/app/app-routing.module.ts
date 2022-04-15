@@ -5,7 +5,7 @@ import { CocktailRecipeComponent } from './cocktail-recipe/cocktail-recipe.compo
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'CocktailRecipe', component: CocktailRecipeComponent }
+  { path: 'CocktailRecipe/:id', component: CocktailRecipeComponent }
 
 ];
 

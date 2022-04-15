@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ConfigUrlService } from '../service/config-url.service';
 import { Observable, throwError } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
 declare var showSelectMenu: any;
@@ -15,21 +16,22 @@ declare var hideSelectMenu: any;
 export class HomeComponent implements OnInit {
   @Input() Ingredientform: any
 
-  constructor(public urlService: ConfigUrlService, private route: ActivatedRoute) { }
+  constructor(public urlService: ConfigUrlService, 
+    private route: ActivatedRoute,
+    private router: Router) { }
 
-  ingredientName = <any>[];
+  cocktail = <any>[];
   cocktailId = <any>[];
 
   ngOnInit(): void {
     new showSelectMenu();
     new hideSelectMenu();
-    this.route.paramMap.pipe(
+    /* this.route.paramMap.pipe(
       switchMap(params => {
-        this.cocktailId = String(params.get('idDrink'));
-        console.log(this.cocktailId);
+        this.cocktailId = String(params.get('data.idDrink'));
         return this.urlService.getCocktailById(this.cocktailId);
       })
-    );    
+    );     */
   }
 
 
@@ -38,23 +40,24 @@ export class HomeComponent implements OnInit {
     this.urlService.getCocktailsByIngredientName(selectedIngredient)     
       .subscribe(
           (result) => { 
-            this.ingredientName = result  
-            console.log(this.ingredientName);                      
+            this.cocktail = result  
+            console.log(this.cocktail);                      
           }
       );
   }
 
-  getDrinkById(cocktailId: string) {
-    this.urlService.getCocktailById(this.cocktailId)
-      .subscribe(
+ /* getDrinkById(cocktailId: string) {
+    console.log('getDrink'+ cocktailId);
+
+    this.urlService.getCocktailById(this.cocktailId);
+       .subscribe(
         (result) => {
           this.cocktailId = result
           console.log(this.cocktailId);
           
         }
-      )
-
+      ) 
   }  
-
+*/
   
 }   

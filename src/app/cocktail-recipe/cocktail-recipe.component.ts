@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ConfigUrlService } from '../service/config-url.service';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-cocktail-recipe',
@@ -14,26 +15,24 @@ export class CocktailRecipeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
     private router: Router,
-    public urlService: ConfigUrlService
-    ) { }
+    public urlService: ConfigUrlService) { }
 
   ngOnInit(): void {
-    const cocktailId = this.route.snapshot.paramMap.get("idDrink");
-    this.cocktail = this.urlService.getCocktailsByIngredientName(cocktailId);
+/*      same param in the app-RouterTestingModule.module.ts  ['id']*/
+     const cocktailId = this.route.snapshot.params['id'];
+    
+    this.cocktail = this.urlService.getCocktailById(cocktailId)
+      .subscribe(
+        (result) => { 
+          this.cocktail = result  
+          console.log(this.cocktail);                      
+        }
+    );
+    console.log(this.cocktail); 
+    
   }
- /*  https://angular.io/guide/router
-   
-  ngOnInit() {
-  this.heroes$ = this.route.paramMap.pipe(
-    switchMap(params => {
-      this.selectedId = Number(params.get('id'));
-      return this.service.getHeroes();
-    })
-  );
-}
-  */
- cocktailRecipe(cocktail:any) {
-   const cocktailId = cocktail ? cocktail.idDrink : null;
-   this.router.navigate(['/CocktailRecipe', {idDrink: cocktailId}]);
- }
+
+  cocktailRecipe() {
+    this.router.navigateByUrl(`CocktailRecipe/${this.cocktail.data.idDrink}`);
+  }
 }

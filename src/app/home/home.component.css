@@ -11,7 +11,7 @@
   border-color: #830c65; 
   font-family: "Balsamiq Sans", cursive;
   border: 2px solid;
-  border-radius: 0.25em;
+  border-radius: 0.60em;
   border-color: #ff14bd;
   box-shadow: 0 0 0.2em 0 #ff14bd, 0 0 0.2em 0 #ff14bd;
   color: #ff14bd;
@@ -20,14 +20,16 @@
   font-family: "Balsamiq Sans", cursive;
   color: #ff14bd;
   transition: all 1s;
-
 }
 .form-check-input:checked {
-  background-color: #ff14bd;
+  content: '';
+  display: block; 
+  background: #ff14bd;
+  position: absolute;
+  border-radius: 50%;
   border-color: #ff4bcc;
-  box-shadow: 0 0 0.2em 0 #ff14bd, 0 0 0.2em 0 #ff14bd;
+  box-shadow: 0 0 0.2em 0 #ff14bd, 0 0 0.2em 0 #ff14bd; 
 }
-
 .card {
   background-color: #22061b;  
   border-color: #ff14bd;
@@ -58,13 +60,6 @@
   border-color: #ff14bd;
   color: rgb(197, 197, 197);
 }
-
-/* .separator {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent, rgb(144, 39, 158), transparent);  
-} */
-
 
                                     /*###################################*/
                                     /*########## MEDIA QUERIES ##########*/

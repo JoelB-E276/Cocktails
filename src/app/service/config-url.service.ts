@@ -15,7 +15,11 @@ export class ConfigUrlService {
    
   private filterByIngredient = <string> 'filter.php?i=';
 
-  private urlCocktailById = <string> 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+  private CocktailById = <string> 'lookup.php?i=';
+
+  private CocktailByName = <string> 'search.php?s=';
+
+  private urlCocktailByFirstLetter = <string> 'https';
 
   constructor(public http: HttpClient) { }
 
@@ -24,11 +28,11 @@ export class ConfigUrlService {
   }
  */
   getCocktailsByIngredientName(ingredient: any) {
-    return this.http.get<any>(this.url + this.filterByIngredient + ingredient)
+    return this.http.get<any>(this.url + this.filterByIngredient + ingredient);
   }
   
   getCocktailById(cocktailId: string) {
-    return this.http.get<any>(this.urlCocktailById + cocktailId)
+    return this.http.get<any>(this.url + this.CocktailById + cocktailId);
   }
 }
 

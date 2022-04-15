@@ -78,6 +78,7 @@
         <form #RumTypeform="ngForm" (click)="getCocktails(RumTypeform.value)">
           <select class="form-select form-select-sm Rum hidden" ngModel name="Rum" aria-label=".form-select-sm">
             <option value="" disabled selected hidden>Rum</option>
+            <option value="11020">11015</option>
             <option value="151 proof rum">151 proof rum</option>
             <option value="Añejo rum">Añejo rum</option>
             <option value="Dark rum">Dark rum</option>
@@ -240,11 +241,11 @@
   <!-- <div *ngIf="Spicedform.dirty || Coffeeform.dirty"
   class="bg-light"><h2 class="text-center">{{ Spicedform.value | json }}</h2></div>--> 
    <div class="row justify-content-center"> 
-     <div *ngFor="let data of ingredientName.drinks" class="col-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-center">
+     <div *ngFor="let data of cocktail.drinks" class="col-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-center">
         <div class="card text-center" style="width: 15rem;">
 <!--           <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
  -->         <div class="card-body">
-            <p class="card-text"><a [routerLink]="['/CocktailRecipe']" routerLinkActive="active" class="btn neons stretched-link text-decoration-none">{{ data.strDrink }}</a></p>
+            <p class="card-text"><a [routerLink]="['CocktailRecipe', data.idDrink]" routerLinkActive="active" class="btn neons stretched-link text-decoration-none">{{ data.strDrink }}</a></p>
           </div>
         </div>
       </div>
