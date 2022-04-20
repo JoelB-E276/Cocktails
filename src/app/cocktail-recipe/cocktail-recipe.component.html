@@ -1,5 +1,83 @@
-<p>cocktail-recipe works!</p>
-{{ cocktail }}
+<div class="container-fluid">
+  <div *ngFor="let data of cocktail.drinks" class="">
+    <h2 class="text-center my-3 cocktailName">{{ data.strDrink }}</h2>  
+    <div *ngIf="data.strDrink" class="">
+      <img src="{{ data.strDrinkThumb }}" class="card-img-top" alt="{{ data.strDrink }}">
+    </div>
+    <h3 class="text-center title_recipe">Ingredients</h3>  
+
+    <div *ngIf="data.strIngredient1">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient1 }}-Medium.png " alt="{{ data.strIngredient1 }}">
+      <span *ngIf="data.strMeasure1">{{ data.strMeasure1 }}{{ data.strIngredient1 }}</span>
+    </div>
+    <div *ngIf="data.strIngredient2">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient2 }}-Medium.png " alt="{{ data.strIngredient2 }}">
+      <span *ngIf="data.strMeasure2">{{ data.strMeasure2 }}{{ data.strIngredient2 }}</span>
+    </div>
+    <div *ngIf="data.strIngredient3">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient3 }}-Medium.png " alt="{{ data.strIngredient3 }}">
+      <span *ngIf="data.strMeasure3">{{ data.strMeasure3 }}{{ data.strIngredient3 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient4">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient4 }}-Medium.png " alt="{{ data.strIngredient4 }}">
+      <span *ngIf="data.strMeasure4">{{ data.strMeasure4 }}{{ data.strIngredient4 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient5">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient5 }}-Medium.png " alt="{{ data.strIngredient5 }}">
+      <span *ngIf="data.strMeasure5">{{ data.strMeasure5 }}{{ data.strIngredient5 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient6">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient6 }}-Medium.png " alt="{{ data.strIngredient6 }}">
+      <span *ngIf="data.strMeasure6">{{ data.strMeasure6 }}{{ data.strIngredient6 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient7">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient7 }}-Medium.png " alt="{{ data.strIngredient7 }}">
+      <span *ngIf="data.strMeasure7">{{ data.strMeasure7 }}{{ data.strIngredient7 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient8">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient8 }}-Medium.png " alt="{{ data.strIngredient8 }}">
+      <span *ngIf="data.strMeasure8">{{ data.strMeasure8 }}{{ data.strIngredient8 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient9">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient9 }}-Medium.png " alt="{{ data.strIngredient9 }}">
+      <span *ngIf="data.strMeasure9">{{ data.strMeasure9 }}{{ data.strIngredient9 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient10">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient10 }}-Medium.png " alt="{{ data.strIngredient10 }}">
+      <span *ngIf="data.strMeasure10">{{ data.strMeasure10 }}{{ data.strIngredient10 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient11">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient11 }}-Medium.png " alt="{{ data.strIngredient11 }}">
+      <span *ngIf="data.strMeasure11">{{ data.strMeasure11 }}{{ data.strIngredient11 }}</span>
+    </div>   
+    <div *ngIf="data.strIngredient12">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient12 }}-Medium.png " alt="{{ data.strIngredient12 }}">
+      <span *ngIf="data.strMeasure12">{{ data.strMeasure12 }}{{ data.strIngredient12 }}</span>
+    </div>
+    <div *ngIf="data.strIngredient13">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient13 }}-Medium.png " alt="{{ data.strIngredient13 }}">
+      <span *ngIf="data.strMeasure13">{{ data.strMeasure13 }}{{ data.strIngredient13 }}</span>
+    </div>
+    <div *ngIf="data.strIngredient14">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient14 }}-Medium.png " alt="{{ data.strIngredient14 }}">
+      <span *ngIf="data.strMeasure14">{{ data.strMeasure14 }}{{ data.strIngredient14 }}</span>
+    </div>
+    <div *ngIf="data.strIngredient15">
+      <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient15 }}-Medium.png " alt="{{ data.strIngredient15 }}">
+      <span *ngIf="data.strMeasure15">{{ data.strMeasure15 }}{{ data.strIngredient15 }}</span>
+    </div>      
+    <div *ngIf="data.strInstructions">
+      <h3 class="text-center title_recipe">Instructions</h3>
+      <p class="instruction text-center">{{ data.strInstructions }}</p>
+    </div>
+    <div *ngIf="data.strVideo">
+      <iframe 
+      src="{{ data.strVideo }}">
+      </iframe> 
+    </div> 
+
+ 
+</div>  
 
 
 <!-- {
@@ -14,11 +92,16 @@
         "strIBA": "Unforgettables",
         "strAlcoholic": "Alcoholic",
         "strGlass": "Old-fashioned glass",
-        "strInstructions": "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice, and set it aside. Stir the remaining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Add the lemon peel for garnish.",
+        "strInstructions": "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice, and set it aside. Stir the rem
+        aining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Add the lemon peel for garnish.",
         "strInstructionsES": null,
-        "strInstructionsDE": "Ein gekühltes old-fashioned Glas mit dem Absinth ausspülen, zerstoßenes Eis hinzufügen und beiseite stellen. Die restlichen Zutaten über das Eis geben und beiseite stellen. Entsorgen Sie das Eis und den überschüssigen Absinth aus dem vorbereiteten Glas und seihen Sie das Getränk in das Glas. Die Zitronenschale als Garnierung hinzufügen.",
+        "strInstructionsDE": "Ein gekühltes old-fashioned Glas mit dem Absinth ausspülen, zerstoßenes Eis hinzufügen und beiseite stellen.
+         Die restlichen Zutaten über das Eis geben und beiseite stellen. Entsorgen Sie das Eis und den überschüssigen Absinth aus dem vorbereiteten 
+         Glas und seihen Sie das Getränk in das Glas. Die Zitronenschale als Garnierung hinzufügen.",
         "strInstructionsFR": null,
-        "strInstructionsIT": "Sciacquare un bicchiere vecchio stile freddo con l'assenzio, aggiungere il ghiaccio tritato e metterlo da parte. Mescola gli ingredienti rimanenti sul ghiaccio e mettilo da parte. Togli il ghiaccio e l'assenzio in eccesso dal bicchiere precedentemente preparato e filtra la bevanda nel bicchiere .Aggiungere la scorza di limone per guarnire.",
+        "strInstructionsIT": "Sciacquare un bicchiere vecchio stile freddo con l'assenzio, aggiungere il ghiaccio tritato e metterlo da parte. 
+        Mescola gli ingredienti rimanenti sul ghiaccio e mettilo da parte. Togli il ghiaccio e l'assenzio in eccesso dal bicchiere precedentemente 
+        preparato e filtra la bevanda nel bicchiere .Aggiungere la scorza di limone per guarnire.",
         "strInstructionsZH-HANS": null,
         "strInstructionsZH-HANT": null,
         "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/vvpxwy1439907208.jpg",
