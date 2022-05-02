@@ -1,4 +1,5 @@
-# Api
+# Cocktails
+First try of Angular app. This application sends requests to free API "thecocktaildb.com". I thank the work done by the cocktailDB team and that allows me to present you this application.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
