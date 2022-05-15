@@ -6,3 +6,15 @@ body {
   	font-size: 1rem;
   	background-color: #000000;  
 }
+.content{
+	flex: 1; 
+}
+.div_logo{
+	text-align: center;
+	display: block;
+}
+.logo{
+	width: 120px;
+	/* width: auto;
+	height: auto; */
+}
