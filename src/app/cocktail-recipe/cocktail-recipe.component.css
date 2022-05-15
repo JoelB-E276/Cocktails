@@ -3,9 +3,13 @@
     font-family: "Balsamiq Sans", cursive;
     color: #ff14bd;
 }
+.nav_link{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:smaller;
+    color: #ff14bd;
+}
 .cocktailName{
-/*     border-color: #ff14bd;
- */    border: 3px solid;
+    border: 3px solid;
     background-color: #22061b;
     border-radius: 0.25em;
     text-shadow: 0 0 0.125em #ffffff4d, 0 0 0.45em currentColor;
@@ -20,9 +24,6 @@
     height: auto;
     background-color: brown;
 }
-.section_ingredients{
-/*     background-color: aqua;       
- */}
 .title_recipe{
     text-shadow: 0 0 0.125em #ffffff4d, 0 0 0.45em currentColor;
 }
@@ -30,8 +31,7 @@
     text-align: center;
 }
 .div_ingredient{
-/*     background-color: #dcff14;
- */    text-align: center;
+    text-align: center;
 }
 .ingredientThumb{
     display: block;
@@ -40,9 +40,8 @@
 }
 .div_instruction{
     display: block;
-/*     background-color: crimson;
- */    text-align: left;
-}
+    text-align: left;
+} 
 /* .div_video { 
     overflow:hidden; 
     padding-bottom:56.25%; 
@@ -62,19 +61,17 @@
                                     /*###################################*/
 
 @media screen and (min-width:576px) and (max-width: 767px){
-    .div_cocktailThumb{
-        float: left;
-/*         text-align: left;
- */    }
+    .nav_link{
+        font-size: medium;
+    }
     .cocktailThumb{
-        max-width: 50vw;
-        max-height: 50vh;
+        max-width: 45vw;
+        max-height: 45vh;
         width: auto;
         height: auto;
     }
     .section_ingredients{
-/*         font-size: 0.9rem;
-   */      float: right;
+        border-left: 1px ridge #ff14bd;
     }
     .div_ingredient{
         text-align: center;
@@ -82,65 +79,58 @@
     .ingredientThumb{
         display: block;
         margin: auto;
+        width: 9rem;
     }
 }
 @media screen and (min-width:768px) and (max-width:992px){
-    .div_cocktailThumb{
-        float: left;
-    }
     .cocktailThumb{
-        max-width: 50vw;
-        max-height: 50vh;
+        max-width: 45vw;
+        max-height: 45vh;
         width: auto;
         height: auto;
     }
     .section_ingredients{
-        float: right;
+        border-left: 1px ridge #ff14bd;
     }
     .div_ingredient{
         text-align: left;
     }
     .ingredientThumb{
         display: inline;
-        width: 8rem;
+        width: 10rem;
     }
 }
 @media screen and (min-width:993px) and (max-width:1200px){
-    .div_cocktailThumb{
-        float: left;
-    }
     .cocktailThumb{
-        max-width: 50vw;
-        max-height: 50vh;
+        max-width: 45vw;
+        max-height: 45vh;
         width: auto;
         height: auto;
     }
     .section_ingredients{
-        float: right;
+        border-left: 1px ridge #ff14bd;
     }
     .div_ingredient{
         text-align: left;
     }
     .ingredientThumb{
         display: inline;
-        width: 9rem;
+        width: 12rem;
     }
-    .div_instruction{
-/*         overflow: auto;
- */    }
 }
 @media screen and (min-width:1200px){
-    .div_cocktailThumb{
-        text-align: left;
-    }
     .cocktailThumb{
-        max-width: 30vw;
-        max-height: 30vh;
+        max-width: 50vw;
+        max-height: 50vh;
         width: auto;
         height: auto;
     }
+    .div_ingredient{
+        text-align: left;
+    }
     .ingredientThumb{
-        width: 6rem;
+        display: inline;
+        width: 14rem;
     }
 }
 /*  BOOTSRAP Breakpoints

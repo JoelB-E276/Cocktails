@@ -1,0 +1,7 @@
+.logo{
+	width: 90px;
+}
+.icon_footer{
+    -webkit-filter:invert(38%) sepia(78%) saturate(7476%) hue-rotate(303deg) brightness(103%) contrast(107%);
+    filter: invert(38%) sepia(78%) saturate(7476%) hue-rotate(303deg) brightness(103%) contrast(107%);
+}

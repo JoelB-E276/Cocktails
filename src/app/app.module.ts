@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { CocktailRecipeComponent } from './cocktail-recipe/cocktail-recipe.component';
+import { FooterComponent } from './shared/layout/footer/footer.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
 
 
 
@@ -14,7 +16,9 @@ import { CocktailRecipeComponent } from './cocktail-recipe/cocktail-recipe.compo
   declarations: [
     AppComponent,
     HomeComponent,
-    CocktailRecipeComponent
+    CocktailRecipeComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

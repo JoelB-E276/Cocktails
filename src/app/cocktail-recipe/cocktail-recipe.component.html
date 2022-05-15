@@ -1,86 +1,88 @@
-<div class="container-fluid">
-                                  <!--### COCKTAIL THUMBNAIL ### -->
-
+<div class="container-fluid mb-3">
+  <nav class="ms-2 text-decoration-none">
+    <a class="nav_link text-decoration-none" routerLink="" ><< Back</a>
+  </nav>
+                                  
   <main *ngFor="let data of cocktail.drinks" class="">
     <div class="d-flex justify-content-center">
-      <h2 class="text-center px-3 my-3 cocktailName">{{ data.strDrink }}</h2>
+      <h2 class="text-center px-3 my-3-sm cocktailName">{{ data.strDrink }}</h2>
     </div>
-
-    <div *ngIf="data.strDrink" class="col-sm-6 my-3 div_cocktailThumb">
-      <img src="{{ data.strDrinkThumb }}" class="cocktailThumb" alt="{{ data.strDrink }}">
-    </div>
-                                  <!--### INGREDIENTS ### -->
-    <section class="col-sm-6 mt-3 section_ingredients">
-
-      <div class="">
-        <h3 class="text-center title_recipe">Ingredients</h3>  
+                                <!--### COCKTAIL THUMBNAIL ### -->
+    <div class="row"> 
+      <div *ngIf="data.strDrink" class="col-sm-6 my-3 div_cocktailThumb">
+        <img src="{{ data.strDrinkThumb }}" class="cocktailThumb" alt="{{ data.strDrink }}">
+                                   <!--### INSTRUCTIONS ### -->
+        <div *ngIf="data.strInstructions" class="div_instruction my-3">
+          <h3 class="text-center title_recipe">Instructions</h3>
+          <p class="instruction text-center">{{ data.strInstructions }}</p>
+        </div>
       </div>
-      <div *ngIf="data.strIngredient1" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient1 }}-Medium.png " alt="{{ data.strIngredient1 }}">
-        <span>{{ data.strMeasure1 }}&nbsp;{{ data.strIngredient1 }}</span>
-      </div>
-      <div *ngIf="data.strIngredient2" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient2 }}-Medium.png " alt="{{ data.strIngredient2 }}">
-        <span>{{ data.strMeasure2 }}&nbsp;{{ data.strIngredient2 }}</span>
-      </div>
-     <div *ngIf="data.strIngredient3"  class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient3 }}-Medium.png " alt="{{ data.strIngredient3 }}">
-        <span>{{ data.strMeasure3 }}&nbsp;{{ data.strIngredient3 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient4"  class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient4 }}-Medium.png " alt="{{ data.strIngredient4 }}">
-        <span>{{ data.strMeasure4 }}&nbsp;{{ data.strIngredient4 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient5"  class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient5 }}-Medium.png " alt="{{ data.strIngredient5 }}">
-        <span>{{ data.strMeasure5 }}&nbsp;{{ data.strIngredient5 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient6" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient6 }}-Medium.png " alt="{{ data.strIngredient6 }}">
-        <span>{{ data.strMeasure6 }}&nbsp;{{ data.strIngredient6 }}</span>
-      </div> 
-      <div *ngIf="data.strIngredient7" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient7 }}-Medium.png " alt="{{ data.strIngredient7 }}">
-        <span>{{ data.strMeasure7 }}&nbsp;{{ data.strIngredient7 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient8" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient8 }}-Medium.png " alt="{{ data.strIngredient8 }}">
-        <span>{{ data.strMeasure8 }}&nbsp;{{ data.strIngredient8 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient9" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient9 }}-Medium.png " alt="{{ data.strIngredient9 }}">
-        <span>{{ data.strMeasure9 }}&nbsp;{{ data.strIngredient9 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient10" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient10 }}-Medium.png " alt="{{ data.strIngredient10 }}">
-        <span>{{ data.strMeasure10 }}&nbsp;{{ data.strIngredient10 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient11" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient11 }}-Medium.png " alt="{{ data.strIngredient11 }}">
-        <span>{{ data.strMeasure11 }}&nbsp;{{ data.strIngredient11 }}</span>
-      </div>   
-      <div *ngIf="data.strIngredient12" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient12 }}-Medium.png " alt="{{ data.strIngredient12 }}">
-        <span>{{ data.strMeasure12 }}&nbsp;{{ data.strIngredient12 }}</span>
-      </div>
-      <div *ngIf="data.strIngredient13" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient13 }}-Medium.png " alt="{{ data.strIngredient13 }}">
-        <span>{{ data.strMeasure13 }}&nbsp;{{ data.strIngredient13 }}</span>
-      </div>
-      <div *ngIf="data.strIngredient14" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient14 }}-Medium.png " alt="{{ data.strIngredient14 }}">
-        <span>{{ data.strMeasure14 }}&nbsp;{{ data.strIngredient14 }}</span>
-      </div>
-      <div *ngIf="data.strIngredient15" class="div_ingredient">
-        <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient15 }}-Medium.png " alt="{{ data.strIngredient15 }}">
-        <span>{{ data.strMeasure15 }}&nbsp;{{ data.strIngredient15 }}</span>
-      </div> 
-    </section>
-                                      <!--### INSTRUCTIONS ### -->
-
-    <div *ngIf="data.strInstructions" class="div_instruction my-3">
-      <h3 class="text-center title_recipe">Instructions</h3>
-      <p class="instruction text-center">{{ data.strInstructions }}</p>
-    </div>
+                                    <!--### INGREDIENTS ### -->
+      <section class="col-sm-6 mt-3 section_ingredients">
+        <div class="">
+          <h3 class="text-center title_recipe">Ingredients</h3>  
+        </div>
+        <div *ngIf="data.strIngredient1" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient1 }}-Medium.png " alt="{{ data.strIngredient1 }}">
+          <span>{{ data.strMeasure1 }}&nbsp;{{ data.strIngredient1 }}</span>
+        </div>
+        <div *ngIf="data.strIngredient2" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient2 }}-Medium.png " alt="{{ data.strIngredient2 }}">
+          <span>{{ data.strMeasure2 }}&nbsp;{{ data.strIngredient2 }}</span>
+        </div>
+        <div *ngIf="data.strIngredient3"  class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient3 }}-Medium.png " alt="{{ data.strIngredient3 }}">
+          <span>{{ data.strMeasure3 }}&nbsp;{{ data.strIngredient3 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient4"  class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient4 }}-Medium.png " alt="{{ data.strIngredient4 }}">
+          <span>{{ data.strMeasure4 }}&nbsp;{{ data.strIngredient4 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient5"  class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient5 }}-Medium.png " alt="{{ data.strIngredient5 }}">
+          <span>{{ data.strMeasure5 }}&nbsp;{{ data.strIngredient5 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient6" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient6 }}-Medium.png " alt="{{ data.strIngredient6 }}">
+          <span>{{ data.strMeasure6 }}&nbsp;{{ data.strIngredient6 }}</span>
+        </div> 
+        <div *ngIf="data.strIngredient7" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient7 }}-Medium.png " alt="{{ data.strIngredient7 }}">
+          <span>{{ data.strMeasure7 }}&nbsp;{{ data.strIngredient7 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient8" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient8 }}-Medium.png " alt="{{ data.strIngredient8 }}">
+          <span>{{ data.strMeasure8 }}&nbsp;{{ data.strIngredient8 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient9" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient9 }}-Medium.png " alt="{{ data.strIngredient9 }}">
+          <span>{{ data.strMeasure9 }}&nbsp;{{ data.strIngredient9 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient10" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient10 }}-Medium.png " alt="{{ data.strIngredient10 }}">
+          <span>{{ data.strMeasure10 }}&nbsp;{{ data.strIngredient10 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient11" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient11 }}-Medium.png " alt="{{ data.strIngredient11 }}">
+          <span>{{ data.strMeasure11 }}&nbsp;{{ data.strIngredient11 }}</span>
+        </div>   
+        <div *ngIf="data.strIngredient12" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient12 }}-Medium.png " alt="{{ data.strIngredient12 }}">
+          <span>{{ data.strMeasure12 }}&nbsp;{{ data.strIngredient12 }}</span>
+        </div>
+        <div *ngIf="data.strIngredient13" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient13 }}-Medium.png " alt="{{ data.strIngredient13 }}">
+          <span>{{ data.strMeasure13 }}&nbsp;{{ data.strIngredient13 }}</span>
+        </div>
+        <div *ngIf="data.strIngredient14" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient14 }}-Medium.png " alt="{{ data.strIngredient14 }}">
+          <span>{{ data.strMeasure14 }}&nbsp;{{ data.strIngredient14 }}</span>
+        </div>
+        <div *ngIf="data.strIngredient15" class="div_ingredient">
+          <img class="ingredientThumb" src="https://www.thecocktaildb.com/images/ingredients/{{ data.strIngredient15 }}-Medium.png " alt="{{ data.strIngredient15 }}">
+          <span>{{ data.strMeasure15 }}&nbsp;{{ data.strIngredient15 }}</span>
+        </div> 
+      </section>
+    </div>                         
   </main>  
 </div>
