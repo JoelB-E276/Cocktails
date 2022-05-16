@@ -1,5 +1,6 @@
 .select_ingredient {
 	flex: 1;
+  min-height: 50vh;
   background-color: #000000;  
 }
 .hidden {

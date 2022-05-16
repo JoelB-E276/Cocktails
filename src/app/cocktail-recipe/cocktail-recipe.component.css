@@ -1,0 +1,148 @@
+.container-fluid{
+    background-color: #000000;
+    font-family: "Balsamiq Sans", cursive;
+    color: #ff14bd;
+}
+.nav_link{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:smaller;
+    color: #ff14bd;
+}
+.cocktailName{
+    border: 3px solid;
+    background-color: #22061b;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em #ffffff4d, 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
+    -webkit-box-shadow: 0px 0px 17px 1px #ff14bd; 
+}
+.cocktailThumb{
+    text-align: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    background-color: brown;
+}
+.title_recipe{
+    text-shadow: 0 0 0.125em #ffffff4d, 0 0 0.45em currentColor;
+}
+.div_cocktailThumb{
+    text-align: center;
+}
+.div_ingredient{
+    text-align: center;
+}
+.ingredientThumb{
+    display: block;
+    margin: auto;
+    width: 8rem;
+}
+.div_instruction{
+    display: block;
+    text-align: left;
+} 
+/* .div_video { 
+    overflow:hidden; 
+    padding-bottom:56.25%; 
+    position:relative; 
+    height:0;
+}
+    
+.div_video iframe {
+    left:0; 
+    top:0; 
+    height:100%;
+    width:100%;
+    position:absolute;
+} */
+                                    /*###################################*/
+                                    /*########## MEDIA QUERIES ##########*/
+                                    /*###################################*/
+
+@media screen and (min-width:576px) and (max-width: 767px){
+    .nav_link{
+        font-size: medium;
+    }
+    .cocktailThumb{
+        max-width: 45vw;
+        max-height: 45vh;
+        width: auto;
+        height: auto;
+    }
+    .section_ingredients{
+        border-left: 1px ridge #ff14bd;
+    }
+    .div_ingredient{
+        text-align: center;
+    }
+    .ingredientThumb{
+        display: block;
+        margin: auto;
+        width: 9rem;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .cocktailThumb{
+        max-width: 45vw;
+        max-height: 45vh;
+        width: auto;
+        height: auto;
+    }
+    .section_ingredients{
+        border-left: 1px ridge #ff14bd;
+    }
+    .div_ingredient{
+        text-align: left;
+    }
+    .ingredientThumb{
+        display: inline;
+        width: 10rem;
+    }
+}
+@media screen and (min-width:993px) and (max-width:1200px){
+    .cocktailThumb{
+        max-width: 45vw;
+        max-height: 45vh;
+        width: auto;
+        height: auto;
+    }
+    .section_ingredients{
+        border-left: 1px ridge #ff14bd;
+    }
+    .div_ingredient{
+        text-align: left;
+    }
+    .ingredientThumb{
+        display: inline;
+        width: 12rem;
+    }
+}
+@media screen and (min-width:1200px){
+    .cocktailThumb{
+        max-width: 50vw;
+        max-height: 50vh;
+        width: auto;
+        height: auto;
+    }
+    .div_ingredient{
+        text-align: left;
+    }
+    .ingredientThumb{
+        display: inline;
+        width: 14rem;
+    }
+}
+/*  BOOTSRAP Breakpoints
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+    320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1200px and more —  Extra large screens, TV 
+*/
