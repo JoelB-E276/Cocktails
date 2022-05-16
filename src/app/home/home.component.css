@@ -61,14 +61,3 @@
   border-color: #ff14bd;
   color: rgb(197, 197, 197);
 }
-
-                                    /*###################################*/
-                                    /*########## MEDIA QUERIES ##########*/
-                                    /*###################################*/
-
-@media screen and (max-width: 767px){
-
-    /* .dropdown-menu > li > .dropdown-submenu {
-        position: static !important;
-    } */
-}  
